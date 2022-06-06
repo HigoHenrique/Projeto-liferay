@@ -1,4 +1,6 @@
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../login/auth.service";
 
 @Component({
   selector: 'app-menu',
@@ -8,8 +10,20 @@ import { Component, OnInit } from "@angular/core";
 
 export class MenuComponent implements OnInit {
 
-    constructor() {}
-    ngOnInit(): void {}
+  constructor(private authService: AuthService) { }
+
+  // isChecked: boolean= false;
+
+  ngOnInit(): void {
+   }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  // changed(evnet: MatSlideToggleChange):void {
+
+  // }
 
 
 }
